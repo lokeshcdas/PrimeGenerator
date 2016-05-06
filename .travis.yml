@@ -1,0 +1,22 @@
+install: true
+
+language: cpp
+
+script: 
+    - gcc primeGenerator.cpp -o primeGenerator.x
+compilier: gcc
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "D9hfrwcibn4mJ/RP+d7B1ZQbnk1QlsuJrq9i6+4Wi1HgVMxTMoXOYDQQK5/wQtnDC3HunjG/r/nLdSNJa0UEI+VrcLMlc2LsElkXIVJTzC1t80DyoSolPIf7P7xzE5pOVDPmg0Aw/rowVDLsq4uTd7HaCHr5dVZI3NkKnhfeLBEVJ2Tj2U2jGUbEID+ngXnLxlVJOXaQBo1qLWN6bif0WsA83RN5iVr/T5ofs8Fr0uCbQh899xj4ysWdPWW8wlO8W1F9NEhzLfgLnqRwElWe1cRlWIuMOsyLihw0ULmWSMM1NwvcufI+gvK9yBaOusGlTJBuBQKjLDfScWAIttuvbGpHT8nBwlI4n0xamDjf8Cg7xkW6YiTWDOaUrC/qHcqduiiqtqYFwS9bNNGLmAcc60gqgG3CGDUbLKumyhdB9ioflWbGDygSqcM25ImC1tOJpsemAR0Y8ePrPkY0KNKWqGLKxvIU7uI8UKe4yJO3L3yy9odlISCpvpYKhAiSrr0UZSD7M5PEDbUMr1fBAjQvQjJ0f+Bs+t0wyVpE+DUYa87dQkuGA9yN5vu6kAJFZg1jrMtMzTWrPqt6NWlI5uE04dMnmlA/2yXt3MCkXPG4WqiUghTlFjvbAc8ZgxxCm9/wdwPYuhzfM41C7VBU9dS1y6znJy0wJE2Jcke3fa56BFY="
+
+addons:
+  coverity_scan:
+    project:
+      name: "lokeshcdas/PrimeGenerator"
+      description: "<Your project description here>"
+    notification_email: lokesh.das@bjitgroup.com
+    build_command_prepend: "<Your build preprocessing command here>"
+    build_command:   "<Your build command here>"
+    branch_pattern: coverity_scan
